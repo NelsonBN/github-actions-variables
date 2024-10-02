@@ -18,7 +18,6 @@ jobs:
     steps:
     - name: "Show Variables"
       run: |
-        echo "github.run_number: ${{ github.run_number }}"
         echo "***** GITHUB CONTEXT *****"
         echo "github.repository_owner: ${{ github.repository_owner }}"
         echo "github.repository: ${{ github.repository }}"
