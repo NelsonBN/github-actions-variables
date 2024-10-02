@@ -1,0 +1,42 @@
+name: 'Demo - Variables'
+
+
+on:
+  workflow_dispatch:
+
+  push:
+
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+
+
+jobs:
+  demo-job:
+    name: "Job to Show Variables"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: "Show Variables"
+      run: |
+        echo "github.run_number: ${{ github.run_number }}"
+        echo "***** GITHUB CONTEXT *****"
+        echo "github.repository_owner: ${{ github.repository_owner }}"
+        echo "github.repository: ${{ github.repository }}"
+        echo "github.event.repository.name: ${{ github.event.repository.name }}"
+        echo "***** FOLDERS *****"
+        echo "github.workspace: ${{ github.workspace }}"
+        echo "github.workflow: ${{ github.workflow }}"
+        echo "***** RUNNER CONTEXT *****"
+        echo "runner.os: ${{ runner.os }}"
+        echo "***** ACTIONS CONTEXT *****"
+        echo "github.run_number: ${{ github.run_number }}"
+        echo "github.run_id: ${{ github.run_id }}"
+        echo "github.actor: ${{ github.actor }}"
+        echo "github.job: ${{ github.job }}"
+        echo "***** BRANCHES *****"
+        echo "github.ref: ${{ github.ref }}"
+        echo "github.head_ref: ${{ github.head_ref }}"
+        echo "github.base_ref: ${{ github.base_ref }}"
+        echo "***** EVENTS *****"
+        echo "github.event_name: ${{ github.event_name }}"
+        echo "github.event: ${{ github.event }}"
